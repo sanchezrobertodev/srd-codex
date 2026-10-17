@@ -33,7 +33,7 @@ pnpm typecheck
 ### Builds
 
 - `pnpm build` → `apps/codex/dist/`: the static site with a service worker. Host it anywhere.
-- `pnpm build:single` → `apps/codex/dist-single/index.html`: one self-contained file (about 1.7 MB, no pictures; entries show silhouettes). Open it from disk or keep it on a USB stick.
+- `pnpm build:single` → `apps/codex/dist-single/index.html`: one self-contained file (about 4 MB, no pictures; entries show silhouettes). Open it from disk or keep it on a USB stick.
 
 Set `DND_RELEASE=1` on a build to refuse it while any picture is a placeholder or unreviewed (the Pages deploy does this).
 

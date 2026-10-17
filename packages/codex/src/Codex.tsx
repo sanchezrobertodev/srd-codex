@@ -1079,10 +1079,10 @@ function MonsterEntry({ m }: { m: MonsterData }) {
       page={<StatBlock m={m} />}
       notes={
         <>
-          <Note title="In the game">
+          <Note title="Where it lives">
             {homes.length ? (
               <>
-                <p className="mb-1.5">Turns up in the encounter tables of:</p>
+                <p className="mb-1.5">Usually found in:</p>
                 <div className="flex flex-wrap gap-1.5">
                   {homes.map((h) => (
                     <TagLink key={h} href={codexHref("bestiary", m.id, filtered(BESTIARY, { home: [h] }))} title={`Every creature found in ${habitatLabel(h).toLowerCase()}`}>
@@ -1092,7 +1092,7 @@ function MonsterEntry({ m }: { m: MonsterData }) {
                 </div>
               </>
             ) : (
-              <p>Not in the encounter tables: it appears when the story calls for it.</p>
+              <p>No usual habitat: it appears when the story calls for it.</p>
             )}
             <p className="mt-2 text-stone-400">Initiative {sign(abilityMod(m.abilities.dex))}</p>
           </Note>
@@ -1748,7 +1748,7 @@ export function ClassPage({ c, art = true }: { c: ClassData; art?: boolean }) {
             ))}
           </ul>
           <p className="my-1.5 text-sm text-ink-soft">
-            The potion of healing is this game&apos;s gift to every new hero.
+            The potion of healing is this Codex&apos;s suggested extra, not part of the SRD kit.
             {gold ? ` Or start with ${gold.dice}${gold.multiplier > 1 ? ` × ${gold.multiplier}` : ""} gp and buy your own.` : ""}
           </p>
         </>
@@ -1867,7 +1867,7 @@ export function RacePage({ r, art = true }: { r: RaceData; art?: boolean }) {
       {sub && (
         <>
           <h3 className="statblock-section">{sub.name}</h3>
-          <p className="my-1.5 text-sm text-ink-soft">The SRD&apos;s subrace of the {name.toLowerCase()}, the one this game plays.</p>
+          <p className="my-1.5 text-sm text-ink-soft">The SRD&apos;s subrace of the {name.toLowerCase()}.</p>
           <p className="codex-line">
             <b>Ability Score Increase</b> {bonuses(sub.abilityBonuses)}
           </p>

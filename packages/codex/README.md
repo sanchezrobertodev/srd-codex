@@ -162,7 +162,7 @@ Two more chapters, in the same frame as the others: the one search, links of the
 `apps/codex` wraps this component with no other dependencies:
 
 - `pnpm --filter @dnd/codex-app build` -> `apps/codex/dist/`: a static site with a service worker. Host it anywhere (GitHub Pages, a NAS, a folder behind any web server); once opened it is installable and works offline.
-- `pnpm --filter @dnd/codex-app build:single` -> `apps/codex/dist-single/index.html`: one file of about 1.7 MB with everything inlined. Open it from disk, mail it, keep it on a USB stick.
+- `pnpm --filter @dnd/codex-app build:single` -> `apps/codex/dist-single/index.html`: one file of about 4 MB with everything inlined. Open it from disk, mail it, keep it on a USB stick.
 
 ## Attribution
 
