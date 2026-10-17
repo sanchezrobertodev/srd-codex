@@ -1,0 +1,520 @@
+/*
+ * Rulebook-style stat block: parchment page with the classic tapered rules.
+ * Plain CSS on purpose so any consumer can import it; the colors and fonts fall back to the
+ * custom properties below when the host app does not define them.
+ */
+:root {
+  --font-display: "Cinzel", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  --font-body: "Crimson Pro", "Palatino Linotype", Georgia, serif;
+  --color-parchment: #f3e9d2;
+  --color-ink: #2b2118;
+  --color-ink-soft: #5a4a3a;
+  --codex-rubric: #7a200d;
+  --codex-rule: #9c2b1a;
+  --codex-font-ui: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+.statblock {
+  background: var(--color-parchment);
+  color: var(--color-ink);
+  background-image: radial-gradient(ellipse at top left, rgba(255, 255, 255, 0.35), transparent 60%), radial-gradient(ellipse at bottom right, rgba(120, 80, 40, 0.18), transparent 55%);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45), inset 0 0 0 1px rgba(90, 60, 30, 0.35);
+  border-top: 4px solid var(--codex-rubric);
+  border-bottom: 4px solid var(--codex-rubric);
+  padding: 1rem 1.25rem;
+  max-width: 44rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+.statblock-title {
+  font-family: var(--font-display);
+  font-variant: small-caps;
+  font-size: 1.6rem;
+  color: var(--codex-rubric);
+  line-height: 1.1;
+}
+.statblock-section {
+  font-family: var(--font-display);
+  font-variant: small-caps;
+  font-size: 1.15rem;
+  color: var(--codex-rubric);
+  border-bottom: 1px solid var(--codex-rubric);
+  margin: 0.75rem 0 0.35rem;
+}
+.statblock-rule {
+  border: 0;
+  height: 4px;
+  margin: 0.5rem 0;
+  background: var(--codex-rule);
+  clip-path: polygon(0 50%, 1.5% 0, 98.5% 0, 100% 50%, 98.5% 100%, 1.5% 100%);
+}
+.statblock code {
+  font-size: 0.75rem;
+  background: rgba(0, 0, 0, 0.06);
+  padding: 0 0.25rem;
+  border-radius: 3px;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 8px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: var(--codex-scroll-thumb, rgba(255, 255, 255, 0.15));
+  border-radius: 4px;
+}
+
+/* Links and terms inside rules text, with their preview cards (DAG-76). */
+.codex-ref {
+  position: relative;
+}
+.codex-xref {
+  color: var(--codex-rubric);
+  font-style: italic;
+  text-decoration: underline dotted;
+  text-underline-offset: 3px;
+}
+.codex-xref:hover {
+  text-decoration-style: solid;
+}
+.codex-term {
+  cursor: help;
+  text-decoration: underline dotted rgba(90, 74, 58, 0.6);
+  text-underline-offset: 3px;
+}
+.codex-xref:focus-visible,
+.codex-term:focus-visible {
+  outline: 2px solid var(--codex-rule);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+.codex-preview {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 6px);
+  z-index: 20;
+  width: min(20rem, 80vw);
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.65rem 0.8rem;
+  background: var(--color-parchment);
+  color: var(--color-ink);
+  border: 1px solid rgba(90, 60, 30, 0.45);
+  border-top: 3px solid var(--codex-rubric);
+  border-radius: 4px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  font: normal 0.9rem/1.35 var(--font-body);
+  text-align: left;
+  white-space: normal;
+}
+.codex-preview i {
+  color: var(--color-ink-soft);
+}
+.codex-preview-title {
+  font-family: var(--font-display);
+  font-variant: small-caps;
+  font-size: 1rem;
+  color: var(--codex-rubric);
+}
+.codex-preview-facts {
+  font-size: 0.8rem;
+  color: var(--color-ink-soft);
+}
+
+/*
+ * Themes (DAG-78). The Codex's chrome is drawn with the host's slate, stone and ember tokens; the
+ * light theme redefines those tokens inside the Codex, so one set of classes serves both. Dark is
+ * the game's slate; light is a parchment reading theme. The pages themselves are parchment in both.
+ */
+.codex-theme {
+  /* The faintest text (facts beside list rows) is lightened to meet WCAG AA on the dark slate. */
+  --color-stone-500: #a39a91;
+  --codex-scroll-thumb: rgba(255, 255, 255, 0.15);
+  color-scheme: dark;
+}
+.codex-theme[data-codex-theme="light"] {
+  --color-slate-900: #e9dfcb;
+  --color-slate-800: #f4ecdc;
+  --color-slate-700: #e2d5bb;
+  --color-slate-600: #c4b18b;
+  --color-stone-100: #2b2118;
+  --color-stone-200: #35291e;
+  --color-stone-300: #45372a;
+  --color-stone-400: #574634;
+  --color-stone-500: #67533f;
+  --color-ember-light: #9a3a15;
+  --codex-scroll-thumb: rgba(43, 33, 24, 0.25);
+  color-scheme: light;
+}
+@media (prefers-color-scheme: light) {
+  .codex-theme[data-codex-theme="system"] {
+    --color-slate-900: #e9dfcb;
+    --color-slate-800: #f4ecdc;
+    --color-slate-700: #e2d5bb;
+    --color-slate-600: #c4b18b;
+    --color-stone-100: #2b2118;
+    --color-stone-200: #35291e;
+    --color-stone-300: #45372a;
+    --color-stone-400: #574634;
+    --color-stone-500: #67533f;
+    --color-ember-light: #9a3a15;
+    --codex-scroll-thumb: rgba(43, 33, 24, 0.25);
+    color-scheme: light;
+  }
+}
+
+/* Entry pages (DAG-78): the page with its notes beside it when there's room, under it when not. */
+.codex-page-area {
+  container-type: inline-size;
+}
+.codex-spread {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.25rem;
+  align-items: start;
+}
+.codex-notes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 1.25rem 2rem;
+  align-content: start;
+}
+@container (min-width: 52rem) {
+  .codex-spread {
+    grid-template-columns: minmax(0, 44rem) minmax(12rem, 18rem);
+  }
+  .codex-notes {
+    grid-template-columns: minmax(0, 1fr);
+    position: sticky;
+    top: 0;
+  }
+}
+@container (max-width: 34rem) {
+  .codex-art-page {
+    height: 8rem;
+  }
+}
+.statblock header > p {
+  margin: 0.1rem 0 0;
+}
+.codex-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.4rem;
+}
+.codex-badge {
+  font: 600 0.66rem/1.5 var(--codex-font-ui);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0 0.5rem;
+  border: 1px solid var(--codex-rubric);
+  border-radius: 999px;
+  color: var(--codex-rubric);
+}
+/* "At a glance": the numbers a player looks for first. */
+.codex-glance {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(8.5rem, 1fr));
+  gap: 0.4rem 1rem;
+  margin: 0.6rem 0 0;
+}
+.codex-fact dt {
+  font: 600 0.66rem/1.3 var(--codex-font-ui);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--codex-rubric);
+}
+.codex-fact dd {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.25;
+  font-variant-numeric: tabular-nums;
+}
+.codex-fact small {
+  color: var(--color-ink-soft);
+  font-size: 0.82rem;
+}
+.codex-abilities {
+  width: 100%;
+  margin: 0.25rem 0;
+  border-collapse: collapse;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+.codex-abilities th {
+  font: 600 0.78rem var(--font-display);
+  color: var(--codex-rubric);
+}
+.codex-abilities td span {
+  color: var(--color-ink-soft);
+}
+.codex-line {
+  margin: 0.12rem 0;
+}
+.codex-line > b {
+  color: var(--codex-rubric);
+}
+.codex-block {
+  margin: 0.4rem 0;
+}
+.codex-block > p {
+  margin: 0.25rem 0;
+}
+.codex-list {
+  margin: 0.15rem 0 0.4rem;
+  padding-left: 1.25rem;
+  list-style: disc;
+}
+.codex-list li {
+  margin: 0.1rem 0;
+}
+.codex-list li::marker {
+  color: var(--codex-rubric);
+}
+.codex-props {
+  margin: 0;
+  display: grid;
+  gap: 0.35rem;
+}
+.codex-props dt {
+  display: inline;
+  font-weight: 600;
+  font-style: italic;
+}
+.codex-props dd {
+  display: inline;
+  margin: 0 0 0 0.35rem;
+}
+
+/* The art slot: where the illustration goes, a seal with the initials until it lands. */
+.codex-art {
+  position: relative;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  border-radius: 6px;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(122, 32, 13, 0.08), transparent 60%),
+    repeating-linear-gradient(135deg, rgba(43, 33, 24, 0.06) 0 2px, transparent 2px 9px),
+    #e8dbbd;
+}
+.codex-art-page {
+  width: 100%;
+  height: 12rem;
+  margin: 0.75rem 0 0.25rem;
+  border: 1px solid rgba(90, 60, 30, 0.35);
+}
+.codex-art-thumb {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+}
+.codex-seal {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: 2px solid rgba(122, 32, 13, 0.5);
+  background: rgba(243, 233, 210, 0.7);
+  color: var(--codex-rubric);
+  font: 600 1.25rem var(--font-display);
+}
+.codex-art-page .codex-seal {
+  width: 4.5rem;
+  height: 4.5rem;
+  font-size: 1.8rem;
+}
+/* With its picture (DAG-70): the whole figure, on the slot's parchment. */
+.codex-art.has-art {
+  overflow: hidden;
+}
+.codex-art-page.has-art {
+  height: 18rem;
+}
+.codex-art.has-art img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 0.35rem;
+}
+/* A stand-in silhouette (white) on a rubric seal. */
+.codex-seal-icon {
+  background: var(--codex-rubric);
+  border-color: rgba(43, 33, 24, 0.55);
+}
+.codex-seal-icon img {
+  width: 62%;
+  height: 62%;
+}
+/* A magic item's rarity pip (DAG-72), in the top corner of its picture. */
+.codex-rarity {
+  position: absolute;
+  top: 0.4rem;
+  left: 0.4rem;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  border: 2px solid #f3e9d2;
+  box-shadow: 0 0 0 1px rgba(43, 33, 24, 0.55);
+}
+.codex-art-page .codex-rarity {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+/* On a list row's picture: small, on its top-left edge, outside the round crop. */
+.codex-row-art-wrap {
+  position: relative;
+  display: inline-grid;
+  flex: none;
+}
+.codex-row-art-wrap .codex-rarity {
+  top: -0.1rem;
+  left: -0.1rem;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-width: 1.5px;
+}
+
+/* A page without art (DAG-80, after DAG-75): a slim band with the seal, not a large empty frame. */
+.codex-art-slim {
+  grid-auto-flow: column;
+  justify-content: start;
+  gap: 0.75rem;
+  margin: 0.75rem 0 0.25rem;
+  padding: 0.4rem 0.75rem;
+  border: 1px solid rgba(90, 60, 30, 0.25);
+}
+.codex-art-slim .codex-seal {
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1rem;
+}
+.codex-art-slim-note {
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--color-ink-soft);
+}
+
+/* A list row's picture (DAG-80): small, on the dark list. */
+.codex-row-art {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #e9dfcb;
+}
+.codex-row-art:empty {
+  background: transparent;
+}
+.codex-row-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.codex-row-art.is-icon {
+  background: var(--codex-rubric);
+}
+.codex-row-art.is-icon img {
+  width: 64%;
+  height: 64%;
+}
+
+/* A school's mark beside its name (DAG-73). */
+.codex-school-line {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.codex-school-mark {
+  width: 1.5rem;
+  height: 1.5rem;
+  flex: none;
+}
+
+.codex-art-caption {
+  position: absolute;
+  right: 0.7rem;
+  bottom: 0.45rem;
+  font-style: italic;
+  font-size: 0.8rem;
+  color: var(--color-ink-soft);
+}
+
+/* Keyboard and touch (DAG-79): a visible focus ring everywhere, and 44 px targets on phones. */
+.codex-theme :focus-visible {
+  outline: 2px solid var(--color-ember-light);
+  outline-offset: 2px;
+}
+.codex-theme .statblock :focus-visible,
+.codex-preview :focus-visible {
+  outline-color: var(--codex-rule);
+}
+@media (max-width: 767px) {
+  .codex-tap {
+    min-height: 44px;
+  }
+}
+.codex-abilities abbr {
+  text-decoration: none;
+}
+
+/* Tables in rules text (DAG-83): magic items' and a few spells' tables, scrolling on their own when narrow. */
+.codex-table-wrap {
+  max-width: 100%;
+  overflow-x: auto;
+  margin: 0.5rem 0 0.75rem;
+}
+.codex-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+}
+.codex-table caption {
+  caption-side: top;
+  text-align: left;
+  font: 600 1rem var(--font-display);
+  font-variant: small-caps;
+  color: var(--codex-rubric);
+  padding-bottom: 0.2rem;
+}
+.codex-table th {
+  text-align: left;
+  font-weight: 600;
+  color: var(--codex-rubric);
+  border-bottom: 1px solid var(--codex-rule);
+  padding: 0.2rem 0.6rem 0.2rem 0;
+}
+.codex-table td {
+  padding: 0.2rem 0.6rem 0.2rem 0;
+  vertical-align: top;
+}
+.codex-table tbody tr:nth-child(odd) td {
+  background: rgba(122, 32, 13, 0.06);
+}
+.codex-table td:first-child {
+  white-space: nowrap;
+}
+
+/* Classes and Races (DAG-84): a class feature's name with the levels it comes at, and the class table. */
+.codex-feature {
+  margin: 0.7rem 0 0.1rem;
+  font: italic 600 1rem/1.3 var(--font-body);
+}
+.codex-feature-level {
+  font: normal 400 0.8rem var(--codex-font-ui);
+  color: var(--color-ink-soft);
+}
+.codex-class-table {
+  font-size: 0.82rem;
+}
+.codex-class-table td:nth-child(3) {
+  min-width: 12rem;
+}

@@ -1,0 +1,41 @@
+/*
+ * Standalone stylesheet for consumers that do not run Tailwind themselves.
+ * `pnpm --filter @dnd/codex build:css` compiles it to dist/codex.css (exported as "@dnd/codex/codex.css").
+ * Apps that already use Tailwind v4 should instead add `@source "../path/to/packages/codex/src";`
+ * to their own stylesheet and import "./statblock.css".
+ */
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap");
+@import "tailwindcss";
+@import "./statblock.css";
+
+@source "./";
+
+@theme {
+  --font-display: "Cinzel", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  --font-body: "Crimson Pro", "Palatino Linotype", Georgia, serif;
+  --color-parchment: #f3e9d2;
+  --color-parchment-dark: #e6d6b2;
+  --color-ink: #2b2118;
+  --color-ink-soft: #5a4a3a;
+  --color-ember: #b3471d;
+  --color-ember-light: #e07a3c;
+  --color-slate-900: #14110f;
+  --color-slate-800: #1e1a17;
+  --color-slate-700: #2a2521;
+  --color-slate-600: #3a332d;
+}
+
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: 0.04em;
+}
+
+@utility btn-ghost {
+  @apply inline-flex items-center justify-center rounded-md px-3 py-1.5 text-sm font-medium transition disabled:cursor-not-allowed disabled:opacity-40 border border-slate-600 text-stone-200 hover:bg-slate-700;
+}
+@utility btn-sheet {
+  @apply inline-flex items-center justify-center rounded-md px-3 py-1.5 text-sm font-medium transition disabled:cursor-not-allowed disabled:opacity-40 border border-ink/60 bg-white/40 text-ink hover:bg-white/70;
+}
+@utility input {
+  @apply w-full rounded-md border border-slate-600 bg-slate-800 px-3 py-2 text-stone-100 outline-none focus:border-ember-light;
+}

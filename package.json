@@ -1,0 +1,22 @@
+{
+  "name": "srd-codex",
+  "private": true,
+  "version": "0.1.0",
+  "description": "SRD 5.1 Bestiary, Spellbook, Armory, Classes and Races as an offline-capable rulebook site.",
+  "license": "MIT",
+  "packageManager": "pnpm@9.14.4",
+  "scripts": {
+    "dev": "pnpm --filter @dnd/codex-app dev",
+    "build": "pnpm --filter @dnd/codex-app build",
+    "build:single": "pnpm --filter @dnd/codex-app build:single",
+    "test": "pnpm -r --if-present test",
+    "typecheck": "pnpm -r --if-present typecheck",
+    "import-srd": "pnpm --filter @dnd/data import-srd"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "typescript": "^5.9.2",
+    "vitest": "^5.0.0",
+    "tsx": "^4.20.5"
+  }
+}

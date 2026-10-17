@@ -1,0 +1,31 @@
+{
+  "name": "@dnd/codex-app",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -p tsconfig.json && vite build",
+    "build:single": "tsc -p tsconfig.json && cross-env SINGLE=1 vite build --outDir dist-single",
+    "preview": "vite preview",
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@dnd/assets": "workspace:*",
+    "@dnd/codex": "workspace:*",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "axe-core": "^4.13.0",
+    "cross-env": "^7.0.3",
+    "tailwindcss": "^4.3.3",
+    "vite": "^8.3.0",
+    "vite-plugin-pwa": "^1.0.0",
+    "vite-plugin-singlefile": "^2.0.0"
+  }
+}

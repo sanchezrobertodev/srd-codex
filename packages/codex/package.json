@@ -1,0 +1,35 @@
+{
+  "name": "@dnd/codex",
+  "version": "0.1.0",
+  "description": "SRD 5.1 Bestiary, Spellbook and Armory as a React component, rulebook style. Data is bundled; no backend.",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./statblock.css": "./src/statblock.css",
+    "./codex.css": "./dist/codex.css",
+    "./route": "./src/route.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json",
+    "build:css": "tailwindcss -i src/codex.css -o dist/codex.css --minify",
+    "test": "vitest run"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0"
+  },
+  "dependencies": {
+    "@dnd/assets": "workspace:*",
+    "@dnd/data": "workspace:*",
+    "@dnd/shared": "workspace:*"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "@types/react": "^19.1.0",
+    "react": "^19.3.0",
+    "tailwindcss": "^4.3.3"
+  }
+}

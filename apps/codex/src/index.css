@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap");
+@import "tailwindcss";
+@import "@dnd/codex/statblock.css";
+
+/* Generate utilities for the component's classes, which live in the package. */
+@source "../../../packages/codex/src";
+
+@theme {
+  --font-display: "Cinzel", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  --font-body: "Crimson Pro", "Palatino Linotype", Georgia, serif;
+  --color-parchment: #f3e9d2;
+  --color-parchment-dark: #e6d6b2;
+  --color-ink: #2b2118;
+  --color-ink-soft: #5a4a3a;
+  --color-ember: #b3471d;
+  --color-ember-light: #e07a3c;
+  --color-slate-900: #14110f;
+  --color-slate-800: #1e1a17;
+  --color-slate-700: #2a2521;
+  --color-slate-600: #3a332d;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--color-slate-900);
+  color: #e8e0d2;
+}
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: 0.04em;
+}
+@utility btn-ghost {
+  @apply inline-flex items-center justify-center rounded-md px-3 py-1.5 text-sm font-medium transition disabled:cursor-not-allowed disabled:opacity-40 border border-slate-600 text-stone-200 hover:bg-slate-700;
+}
+@utility btn-sheet {
+  @apply inline-flex items-center justify-center rounded-md px-3 py-1.5 text-sm font-medium transition disabled:cursor-not-allowed disabled:opacity-40 border border-ink/60 bg-white/40 text-ink hover:bg-white/70;
+}
+@utility input {
+  @apply w-full rounded-md border border-slate-600 bg-slate-800 px-3 py-2 text-stone-100 outline-none focus:border-ember-light;
+}

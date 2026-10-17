@@ -1,0 +1,842 @@
+{
+  "acolyte": {
+    "usage": {},
+    "spellcasting": [
+      {
+        "level": 1,
+        "ability": {
+          "index": "wis",
+          "name": "WIS",
+          "url": "/api/2014/ability-scores/wis"
+        },
+        "dc": 12,
+        "modifier": 4,
+        "components_required": [
+          "V",
+          "S",
+          "M"
+        ],
+        "school": "cleric",
+        "slots": {
+          "1": 3
+        },
+        "spells": [
+          {
+            "name": "Light",
+            "level": 0,
+            "url": "/api/2014/spells/light"
+          },
+          {
+            "name": "Sacred Flame",
+            "level": 0,
+            "url": "/api/2014/spells/sacred-flame"
+          },
+          {
+            "name": "Thaumaturgy",
+            "level": 0,
+            "url": "/api/2014/spells/thaumaturgy"
+          },
+          {
+            "name": "Bless",
+            "level": 1,
+            "url": "/api/2014/spells/bless"
+          },
+          {
+            "name": "Cure Wounds",
+            "level": 1,
+            "url": "/api/2014/spells/cure-wounds"
+          },
+          {
+            "name": "Sanctuary",
+            "level": 1,
+            "url": "/api/2014/spells/sanctuary"
+          }
+        ]
+      }
+    ]
+  },
+  "animated-armor": {
+    "usage": {},
+    "spellcasting": [],
+    "blindBeyondBlindsight": true
+  },
+  "ankheg": {
+    "usage": {
+      "Acid Spray": {
+        "type": "recharge on roll",
+        "dice": "1d6",
+        "min_value": 6
+      }
+    },
+    "spellcasting": []
+  },
+  "black-dragon-wyrmling": {
+    "usage": {
+      "Acid Breath": {
+        "type": "recharge on roll",
+        "dice": "1d6",
+        "min_value": 5
+      }
+    },
+    "spellcasting": []
+  },
+  "blink-dog": {
+    "usage": {
+      "Teleport": {
+        "type": "recharge on roll",
+        "dice": "1d6",
+        "min_value": 4
+      }
+    },
+    "spellcasting": []
+  },
+  "boar": {
+    "usage": {
+      "Relentless": {
+        "type": "recharge after rest",
+        "rest_types": [
+          "short",
+          "long"
+        ]
+      }
+    },
+    "spellcasting": []
+  },
+  "brass-dragon-wyrmling": {
+    "usage": {
+      "Breath Weapons": {
+        "type": "recharge on roll",
+        "dice": "1d6",
+        "min_value": 5
+      }
+    },
+    "spellcasting": []
+  },
+  "bronze-dragon-wyrmling": {
+    "usage": {
+      "Breath Weapons": {
+        "type": "recharge on roll",
+        "dice": "1d6",
+        "min_value": 5
+      }
+    },
+    "spellcasting": []
+  },
+  "copper-dragon-wyrmling": {
+    "usage": {
+      "Breath Weapons": {
+        "type": "recharge on roll",
+        "dice": "1d6",
+        "min_value": 5
+      }
+    },
+    "spellcasting": []
+  },
+  "cult-fanatic": {
+    "usage": {},
+    "spellcasting": [
+      {
+        "level": 4,
+        "ability": {
+          "index": "wis",
+          "name": "WIS",
+          "url": "/api/2014/ability-scores/wis"
+        },
+        "dc": 11,
+        "modifier": 3,
+        "components_required": [
+          "V",
+          "S",
+          "M"
+        ],
+        "school": "cleric",
+        "slots": {
+          "1": 4,
+          "2": 3
+        },
+        "spells": [
+          {
+            "name": "Light",
+            "level": 0,
+            "url": "/api/2014/spells/light"
+          },
+          {
+            "name": "Sacred Flame",
+            "level": 0,
+            "url": "/api/2014/spells/sacred-flame"
+          },
+          {
+            "name": "Thaumaturgy",
+            "level": 0,
+            "url": "/api/2014/spells/thaumaturgy"
+          },
+          {
+            "name": "Command",
+            "level": 1,
+            "url": "/api/2014/spells/command"
+          },
+          {
+            "name": "Inflict Wounds",
+            "level": 1,
+            "url": "/api/2014/spells/inflict-wounds"
+          },
+          {
+            "name": "Shield of Faith",
+            "level": 1,
+            "url": "/api/2014/spells/shield-of-faith"
+          },
+          {
+            "name": "Hold Person",
+            "level": 2,
+            "url": "/api/2014/spells/hold-person"
+          },
+          {
+            "name": "Spiritual Weapon",
+            "level": 2,
+            "url": "/api/2014/spells/spiritual-weapon"
+          }
+        ]
+      }
+    ]
+  },
+  "darkmantle": {
+    "usage": {
+      "Darkness Aura": {
+        "type": "per day",
+        "times": 1
+      }
+    },
+    "spellcasting": []
+  },
+  "deep-gnome-svirfneblin": {
+    "usage": {},
+    "spellcasting": [
+      {
+        "ability": {
+          "index": "int",
+          "name": "INT",
+          "url": "/api/2014/ability-scores/int"
+        },
+        "dc": 11,
+        "components_required": [
+          "V",
+          "S"
+        ],
+        "spells": [
+          {
+            "name": "Nondetection",
+            "level": 3,
+            "notes": "Self only",
+            "url": "/api/2014/spells/nondetection",
+            "usage": {
+              "type": "at will"
+            }
+          },
+          {
+            "name": "Blindness/Deafness",
+            "level": 2,
+            "url": "/api/2014/spells/blindness-deafness",
+            "usage": {
+              "type": "per day",
+              "times": 1
+            }
+          },
+          {
+            "name": "Blur",
+            "level": 2,
+            "url": "/api/2014/spells/blur",
+            "usage": {
+              "type": "per day",
+              "times": 1
+            }
+          },
+          {
+            "name": "Disguise Self",
+            "level": 1,
+            "url": "/api/2014/spells/disguise-self",
+            "usage": {
+              "type": "per day",
+              "times": 1
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "dretch": {
+    "usage": {
+      "Fetid Cloud": {
+        "type": "per day",
+        "times": 1
+      }
+    },
+    "spellcasting": []
+  },
+  "drow": {
+    "usage": {},
+    "spellcasting": [
+      {
+        "ability": {
+          "index": "cha",
+          "name": "CHA",
+          "url": "/api/2014/ability-scores/cha"
+        },
+        "dc": 11,
+        "modifier": 0,
+        "components_required": [
+          "V",
+          "S"
+        ],
+        "spells": [
+          {
+            "name": "Dancing Lights",
+            "level": 0,
+            "url": "/api/2014/spells/dancing-lights",
+            "usage": {
+              "type": "at will"
+            }
+          },
+          {
+            "name": "Darkness",
+            "level": 2,
+            "url": "/api/2014/spells/darkness",
+            "usage": {
+              "type": "per day",
+              "times": 1
+            }
+          },
+          {
+            "name": "Faerie Fire",
+            "level": 1,
+            "url": "/api/2014/spells/faerie-fire",
+            "usage": {
+              "type": "per day",
+              "times": 1
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "druid": {
+    "usage": {},
+    "spellcasting": [
+      {
+        "level": 4,
+        "ability": {
+          "index": "wis",
+          "name": "WIS",
+          "url": "/api/2014/ability-scores/wis"
+        },
+        "dc": 12,
+        "modifier": 4,
+        "components_required": [
+          "V",
+          "S",
+          "M"
+        ],
+        "school": "druid",
+        "slots": {
+          "1": 4,
+          "2": 3
+        },
+        "spells": [
+          {
+            "name": "Druidcraft",
+            "level": 0,
+            "url": "/api/2014/spells/druidcraft"
+          },
+          {
+            "name": "Produce Flame",
+            "level": 0,
+            "url": "/api/2014/spells/produce-flame"
+          },
+          {
+            "name": "Shillelagh",
+            "level": 0,
+            "url": "/api/2014/spells/shillelagh"
+          },
+          {
+            "name": "Entangle",
+            "level": 1,
+            "url": "/api/2014/spells/entangle"
+          },
+          {
+            "name": "Longstrider",
+            "level": 1,
+            "url": "/api/2014/spells/longstrider"
+          },
+          {
+            "name": "Speak with Animals",
+            "level": 1,
+            "url": "/api/2014/spells/speak-with-animals"
+          },
+          {
+            "name": "Thunderwave",
+            "level": 1,
+            "url": "/api/2014/spells/thunderwave"
+          },
+          {
+            "name": "Animal Messenger",
+            "level": 2,
+            "url": "/api/2014/spells/animal-messenger"
+          },
+          {
+            "name": "Barkskin",
+            "level": 2,
+            "url": "/api/2014/spells/barkskin"
+          }
+        ]
+      }
+    ]
+  },
+  "dryad": {
+    "usage": {},
+    "spellcasting": [
+      {
+        "ability": {
+          "index": "cha",
+          "name": "CHA",
+          "url": "/api/2014/ability-scores/cha"
+        },
+        "dc": 14,
+        "components_required": [
+          "V",
+          "S"
+        ],
+        "spells": [
+          {
+            "name": "Druidcraft",
+            "level": 0,
+            "url": "/api/2014/spells/druidcraft",
+            "usage": {
+              "type": "at will"
+            }
+          },
+          {
+            "name": "Entangle",
+            "level": 1,
+            "url": "/api/2014/spells/entangle",
+            "usage": {
+              "type": "per day",
+              "times": 3
+            }
+          },
+          {
+            "name": "Goodberry",
+            "level": 1,
+            "url": "/api/2014/spells/goodberry",
+            "usage": {
+              "type": "per day",
+              "times": 3
+            }
+          },
+          {
+            "name": "Barkskin",
+            "level": 2,
+            "url": "/api/2014/spells/barkskin",
+            "usage": {
+              "type": "per day",
+              "times": 1
+            }
+          },
+          {
+            "name": "Pass Without Trace",
+            "level": 2,
+            "url": "/api/2014/spells/pass-without-trace",
+            "usage": {
+              "type": "per day",
+              "times": 1
+            }
+          },
+          {
+            "name": "Shillelagh",
+            "level": 0,
+            "url": "/api/2014/spells/shillelagh",
+            "usage": {
+              "type": "per day",
+              "times": 1
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "duergar": {
+    "usage": {
+      "Enlarge": {
+        "type": "recharge after rest",
+        "rest_types": [
+          "short",
+          "long"
+        ]
+      },
+      "Invisibility": {
+        "type": "recharge after rest",
+        "rest_types": [
+          "short",
+          "long"
+        ]
+      }
+    },
+    "spellcasting": []
+  },
+  "dust-mephit": {
+    "usage": {
+      "Blinding Breath": {
+        "type": "recharge on roll",
+        "dice": "1d6",
+        "min_value": 6
+      }
+    },
+    "spellcasting": [
+      {
+        "ability": {
+          "index": "cha",
+          "name": "CHA",
+          "url": "/api/2014/ability-scores/cha"
+        },
+        "dc": 10,
+        "components_required": [
+          "V",
+          "S"
+        ],
+        "spells": [
+          {
+            "name": "Sleep",
+            "level": 1,
+            "url": "/api/2014/spells/sleep",
+            "usage": {
+              "type": "per day",
+              "times": 1
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "ettercap": {
+    "usage": {
+      "Web": {
+        "type": "recharge on roll",
+        "dice": "1d6",
+        "min_value": 5
+      }
+    },
+    "spellcasting": []
+  },
+  "flying-sword": {
+    "usage": {},
+    "spellcasting": [],
+    "blindBeyondBlindsight": true
+  },
+  "gelatinous-cube": {
+    "usage": {},
+    "spellcasting": [],
+    "blindBeyondBlindsight": true
+  },
+  "giant-boar": {
+    "usage": {
+      "Relentless": {
+        "type": "recharge after rest",
+        "rest_types": [
+          "short",
+          "long"
+        ]
+      }
+    },
+    "spellcasting": []
+  },
+  "giant-octopus": {
+    "usage": {
+      "Ink Cloud": {
+        "type": "recharge after rest",
+        "rest_types": [
+          "short",
+          "long"
+        ]
+      }
+    },
+    "spellcasting": []
+  },
+  "giant-spider": {
+    "usage": {
+      "Web": {
+        "type": "recharge on roll",
+        "dice": "1d6",
+        "min_value": 5
+      }
+    },
+    "spellcasting": []
+  },
+  "gibbering-mouther": {
+    "usage": {
+      "Blinding Spittle": {
+        "type": "recharge on roll",
+        "dice": "1d6",
+        "min_value": 5
+      }
+    },
+    "spellcasting": []
+  },
+  "gray-ooze": {
+    "usage": {},
+    "spellcasting": [],
+    "blindBeyondBlindsight": true
+  },
+  "green-dragon-wyrmling": {
+    "usage": {
+      "Poison Breath": {
+        "type": "recharge on roll",
+        "dice": "1d6",
+        "min_value": 5
+      }
+    },
+    "spellcasting": []
+  },
+  "grimlock": {
+    "usage": {},
+    "spellcasting": [],
+    "blindBeyondBlindsight": true
+  },
+  "ice-mephit": {
+    "usage": {
+      "Frost Breath": {
+        "type": "recharge on roll",
+        "dice": "1d6",
+        "min_value": 6
+      }
+    },
+    "spellcasting": [
+      {
+        "ability": {
+          "index": "cha",
+          "name": "CHA",
+          "url": "/api/2014/ability-scores/cha"
+        },
+        "components_required": [
+          "V",
+          "S"
+        ],
+        "spells": [
+          {
+            "name": "Fog Cloud",
+            "level": 1,
+            "url": "/api/2014/spells/fog-cloud",
+            "usage": {
+              "type": "per day",
+              "times": 1
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "magma-mephit": {
+    "usage": {
+      "Fire Breath": {
+        "type": "recharge on roll",
+        "dice": "1d6",
+        "min_value": 6
+      }
+    },
+    "spellcasting": [
+      {
+        "ability": {
+          "index": "cha",
+          "name": "CHA",
+          "url": "/api/2014/ability-scores/cha"
+        },
+        "components_required": [
+          "V",
+          "S"
+        ],
+        "dc": 10,
+        "spells": [
+          {
+            "name": "Heat Metal",
+            "level": 2,
+            "url": "/api/2014/spells/heat-metal",
+            "usage": {
+              "type": "per day",
+              "times": 1
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "ochre-jelly": {
+    "usage": {},
+    "spellcasting": [],
+    "blindBeyondBlindsight": true
+  },
+  "octopus": {
+    "usage": {
+      "Ink Cloud": {
+        "type": "recharge after rest",
+        "rest_types": [
+          "short",
+          "long"
+        ]
+      }
+    },
+    "spellcasting": []
+  },
+  "priest": {
+    "usage": {},
+    "spellcasting": [
+      {
+        "level": 5,
+        "ability": {
+          "index": "wis",
+          "name": "WIS",
+          "url": "/api/2014/ability-scores/wis"
+        },
+        "dc": 13,
+        "modifier": 5,
+        "components_required": [
+          "V",
+          "S",
+          "M"
+        ],
+        "school": "cleric",
+        "slots": {
+          "1": 4,
+          "2": 3,
+          "3": 2
+        },
+        "spells": [
+          {
+            "name": "Light",
+            "level": 0,
+            "url": "/api/2014/spells/light"
+          },
+          {
+            "name": "Sacred Flame",
+            "level": 0,
+            "url": "/api/2014/spells/sacred-flame"
+          },
+          {
+            "name": "Thaumaturgy",
+            "level": 0,
+            "url": "/api/2014/spells/thaumaturgy"
+          },
+          {
+            "name": "Cure Wounds",
+            "level": 1,
+            "url": "/api/2014/spells/cure-wounds"
+          },
+          {
+            "name": "Guiding Bolt",
+            "level": 1,
+            "url": "/api/2014/spells/guiding-bolt"
+          },
+          {
+            "name": "Sanctuary",
+            "level": 1,
+            "url": "/api/2014/spells/sanctuary"
+          },
+          {
+            "name": "Lesser Restoration",
+            "level": 2,
+            "url": "/api/2014/spells/lesser-restoration"
+          },
+          {
+            "name": "Spiritual Weapon",
+            "level": 2,
+            "url": "/api/2014/spells/spiritual-weapon"
+          },
+          {
+            "name": "Dispel Magic",
+            "level": 3,
+            "url": "/api/2014/spells/dispel-magic"
+          },
+          {
+            "name": "Spirit Guardians",
+            "level": 3,
+            "url": "/api/2014/spells/spirit-guardians"
+          }
+        ]
+      }
+    ]
+  },
+  "quasit": {
+    "usage": {
+      "Scare": {
+        "type": "per day",
+        "times": 1
+      }
+    },
+    "spellcasting": []
+  },
+  "rug-of-smothering": {
+    "usage": {},
+    "spellcasting": [],
+    "blindBeyondBlindsight": true
+  },
+  "shrieker": {
+    "usage": {},
+    "spellcasting": [],
+    "blindBeyondBlindsight": true
+  },
+  "silver-dragon-wyrmling": {
+    "usage": {
+      "Breath Weapons": {
+        "type": "recharge on roll",
+        "dice": "1d6",
+        "min_value": 5
+      }
+    },
+    "spellcasting": []
+  },
+  "steam-mephit": {
+    "usage": {
+      "Steam Breath": {
+        "type": "recharge on roll",
+        "dice": "1d6",
+        "min_value": 6
+      }
+    },
+    "spellcasting": [
+      {
+        "ability": {
+          "index": "cha",
+          "name": "CHA",
+          "url": "/api/2014/ability-scores/cha"
+        },
+        "dc": 11,
+        "components_required": [
+          "V",
+          "S"
+        ],
+        "spells": [
+          {
+            "name": "Blur",
+            "level": 2,
+            "url": "/api/2014/spells/blur",
+            "usage": {
+              "type": "per day",
+              "times": 1
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "violet-fungus": {
+    "usage": {},
+    "spellcasting": [],
+    "blindBeyondBlindsight": true
+  },
+  "white-dragon-wyrmling": {
+    "usage": {
+      "Cold Breath": {
+        "type": "recharge on roll",
+        "dice": "1d6",
+        "min_value": 5
+      }
+    },
+    "spellcasting": []
+  }
+}
